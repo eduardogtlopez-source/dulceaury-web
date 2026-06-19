@@ -159,14 +159,26 @@
   .chip:hover{transform:translateY(-2px);background:var(--rosa);color:#fff}
   .chip .ic{font-size:1.15rem}
 
-  /* Galerías */
-  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
-  .gal-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sombra-sm);cursor:pointer;background:var(--crema-2)}
-  .gal-item img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .45s ease}
+  /* Galerías (carrusel deslizable) */
+  .gal-carousel{position:relative}
+  .gal-track{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.3rem 2px 1rem}
+  .gal-track::-webkit-scrollbar{display:none}
+  .gal-item{position:relative;flex:0 0 78%;border-radius:18px;overflow:hidden;box-shadow:var(--sombra-sm);cursor:zoom-in;background:var(--crema-2);scroll-snap-align:center}
+  .gal-item img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .45s ease;display:block}
   .gal-item:hover img{transform:scale(1.07)}
-  .gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:.8rem .9rem .7rem;
-    background:linear-gradient(to top,rgba(74,46,42,.74),transparent);color:#fff;font-weight:700;font-size:.9rem;opacity:0;transition:opacity .25s}
-  .gal-item:hover .cap{opacity:1}
+  .gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:.9rem .9rem .8rem;
+    background:linear-gradient(to top,rgba(74,46,42,.82),transparent);color:#fff;font-weight:700;font-size:.9rem}
+  .gal-arrow{position:absolute;top:calc(50% - 8px);transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;border:0;
+    background:rgba(255,255,255,.94);color:var(--cacao,#4a2e2a);box-shadow:var(--sombra);font-size:1.7rem;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:opacity .2s,background .2s}
+  .gal-arrow:hover{background:#fff}
+  .gal-arrow.prev{left:-8px}
+  .gal-arrow.next{right:-8px}
+  .gal-arrow[disabled]{opacity:0;pointer-events:none}
+  @media(max-width:559px){.gal-arrow{display:none}}
+  @media(min-width:560px){.gal-item{flex-basis:42%}}
+  @media(min-width:760px){.gal-item{flex-basis:30%}}
+  @media(min-width:1000px){.gal-item{flex-basis:23%}}
   .gal-more{text-align:center;margin-top:2rem}
   .reales{background:#fff}
   .reales .nota{text-align:center;color:var(--cacao-cl);font-size:.92rem;margin-top:1.3rem;font-style:italic}
@@ -254,8 +266,6 @@
     nav.links ul{display:flex}
     .hero-grid{grid-template-columns:1.05fr .95fr;padding:72px 0 76px}
     .vp-grid{grid-template-columns:repeat(3,1fr)}
-    .gal-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
-    .reales .gal-grid{grid-template-columns:repeat(3,1fr)}
     .pasos{grid-template-columns:repeat(3,1fr)}
     .sobre-grid{grid-template-columns:.95fr 1.05fr}
     .nav-cta-text{display:inline}
@@ -363,7 +373,9 @@
       <h2>Una probadita de lo que creamos</h2>
       <p>Todo se hace por pedido. Estas son ideas para inspirarte; el tuyo será único.</p>
     </div>
-    <div class="gal-grid reveal">
+    <div class="gal-carousel reveal">
+      <button class="gal-arrow prev" type="button" aria-label="Ver anterior">&#8249;</button>
+      <div class="gal-track">
       <div class="gal-item"><picture><source srcset="assets/img/pastel-blanco-rosas.webp" type="image/webp"><img src="assets/img/pastel-blanco-rosas.jpg" alt="Pastel blanco de dos pisos con rosas color malva" loading="lazy"></picture><div class="cap">Elegante · rosas malva</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/pasteles-florales.webp" type="image/webp"><img src="assets/img/pasteles-florales.jpg" alt="Pasteles con decoración floral artesanal" loading="lazy"></picture><div class="cap">Floral · ocasión especial</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/pastel-chocolate.webp" type="image/webp"><img src="assets/img/pastel-chocolate.jpg" alt="Pastel de chocolate con frutos rojos" loading="lazy"></picture><div class="cap">Chocolate · frutos rojos</div></div>
@@ -372,6 +384,8 @@
       <div class="gal-item"><picture><source srcset="assets/img/pasteles-blancos.webp" type="image/webp"><img src="assets/img/pasteles-blancos.jpg" alt="Trío de pasteles blancos elegantes" loading="lazy"></picture><div class="cap">Minimalista · bodas</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/pastel-tematico.webp" type="image/webp"><img src="assets/img/pastel-tematico.jpg" alt="Pastel temático morado de personaje" loading="lazy"></picture><div class="cap">Personajes · a pedido</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/tito-pastel-rosas.webp" type="image/webp"><img src="assets/img/tito-pastel-rosas.jpg" alt="Pastel con rosas acompañado de Tito, la mascota de Dulce Aury" loading="lazy"></picture><div class="cap">Con Tito 🐾</div></div>
+      </div>
+      <button class="gal-arrow next" type="button" aria-label="Ver siguiente">&#8250;</button>
     </div>
   </div>
 </section>
@@ -385,7 +399,9 @@
       <h2>Pasteles que ya llegaron a su fiesta</h2>
       <p>Creaciones reales que hemos entregado a clientes de Xela. La prueba está en cada detalle.</p>
     </div>
-    <div class="gal-grid reveal">
+    <div class="gal-carousel reveal">
+      <button class="gal-arrow prev" type="button" aria-label="Ver anterior">&#8249;</button>
+      <div class="gal-track">
       <div class="gal-item"><picture><source srcset="assets/img/real-pisos-lila.webp" type="image/webp"><img src="assets/img/real-pisos-lila.jpg" alt="Pastel real de pisos blanco con encaje lila y rosas moradas" loading="lazy"></picture><div class="cap">Pisos · encaje lila</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/real-callas.webp" type="image/webp"><img src="assets/img/real-callas.jpg" alt="Pastel real blanco texturizado con flores rosadas" loading="lazy"></picture><div class="cap">Flores · elegante</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/real-mensaje.webp" type="image/webp"><img src="assets/img/real-mensaje.jpg" alt="Pastel real lila con mensaje personalizado para mamá" loading="lazy"></picture><div class="cap">Mensaje a tu medida</div></div>
@@ -398,6 +414,8 @@
       <div class="gal-item"><picture><source srcset="assets/img/real-cincuenta.webp" type="image/webp"><img src="assets/img/real-cincuenta.jpg" alt="Pastel real de aniversario número 50 con flores y dorado" loading="lazy"></picture><div class="cap">Aniversario · 50</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/real-margarita.webp" type="image/webp"><img src="assets/img/real-margarita.jpg" alt="Pastel real de primer año rosado con margarita y globos" loading="lazy"></picture><div class="cap">Primer añito</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/real-bluey.webp" type="image/webp"><img src="assets/img/real-bluey.jpg" alt="Pastel real temático infantil rosado con arcoíris y personajes" loading="lazy"></picture><div class="cap">Temático · personajes</div></div>
+      </div>
+      <button class="gal-arrow next" type="button" aria-label="Ver siguiente">&#8250;</button>
     </div>
     <p class="nota">📸 Fotos de pedidos reales · ¿Quieres ver más del día a día? <a href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener" style="color:var(--rosa);font-weight:700">Síguenos en Facebook</a></p>
   </div>
@@ -562,6 +580,32 @@
       if(Math.abs(dx)>40){ show(current+(dx<0?1:-1)); }
       x0=null;
     },{passive:true});
+  })();
+
+  // Carruseles de galería (flechas + estado de extremos)
+  (function(){
+    document.querySelectorAll('.gal-carousel').forEach(function(car){
+      var track=car.querySelector('.gal-track'),
+          prev=car.querySelector('.gal-arrow.prev'),
+          next=car.querySelector('.gal-arrow.next');
+      if(!track) return;
+      function step(){
+        var item=track.querySelector('.gal-item');
+        var gap=parseFloat(getComputedStyle(track).gap)||16;
+        return item ? item.offsetWidth+gap : track.clientWidth*0.8;
+      }
+      function update(){
+        if(!prev||!next) return;
+        var max=track.scrollWidth-track.clientWidth-2;
+        prev.disabled = track.scrollLeft<=2;
+        next.disabled = track.scrollLeft>=max;
+      }
+      if(prev) prev.addEventListener('click',function(){ track.scrollBy({left:-step(),behavior:'smooth'}); });
+      if(next) next.addEventListener('click',function(){ track.scrollBy({left:step(),behavior:'smooth'}); });
+      track.addEventListener('scroll',update,{passive:true});
+      window.addEventListener('resize',update);
+      update();
+    });
   })();
 
   // Header con sombra + botón volver arriba

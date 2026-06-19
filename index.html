@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dulce Aury · Pasteles artísticos personalizados en Quetzaltenango, Guatemala</title>
+<meta name="description" content="Pastelería artística en Quetzaltenango (Xela), Guatemala. Aquí no hay menú: tú imaginas el pastel y nosotros lo creamos a tu medida para bodas, cumpleaños, baby showers y más. Pide por WhatsApp." />
+<meta name="theme-color" content="#C9707D" />
+<link rel="canonical" href="https://dulceaury.com/" />
+
+<!-- Open Graph / redes -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_GT" />
+<meta property="og:site_name" content="Dulce Aury" />
+<meta property="og:title" content="Dulce Aury · Pasteles artísticos personalizados en Guatemala" />
+<meta property="og:description" content="Aquí no hay menú: tú imaginas el pastel y nosotros lo creamos a tu medida. Pastelería artística en Quetzaltenango, Guatemala." />
+<meta property="og:url" content="https://dulceaury.com/" />
+<meta property="og:image" content="https://dulceaury.com/assets/img/hero-pastel-morado.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" href="assets/img/logo-circular.png" />
+<link rel="apple-touch-icon" href="assets/img/logo-circular.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+<!-- SEO: negocio local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Dulce Aury",
+  "description": "Pastelería artística personalizada. Aquí no hay menú: cada pastel se diseña a la medida del cliente.",
+  "image": "https://dulceaury.com/assets/img/hero-pastel-morado.jpg",
+  "url": "https://dulceaury.com/",
+  "telephone": "+50250193398",
+  "areaServed": "Quetzaltenango, Guatemala",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Quetzaltenango",
+    "addressRegion": "Quetzaltenango",
+    "addressCountry": "GT"
+  },
+  "sameAs": ["https://www.facebook.com/dulceauryguatemala"],
+  "slogan": "Aquí no hay menú. El diseño eres tú."
+}
+</script>
+
+<style>
+  :root{
+    --crema:#FFF8F2; --crema-2:#FBEEE6; --crema-3:#F6E7DD;
+    --rosa:#C9707D; --rosa-cl:#E0939E; --rosa-osc:#B05a67;
+    --lila:#B98FC9; --lila-cl:#D9C2E6;
+    --cacao:#4A2E2A; --cacao-cl:#7A5A52;
+    --oro:#C9A24B; --blanco:#fff;
+    --sombra:0 14px 40px rgba(74,46,42,.12);
+    --sombra-sm:0 6px 18px rgba(74,46,42,.10);
+    --radio:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;color:var(--cacao);background:var(--crema);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.18}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .eyebrow{color:var(--oro);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+
+  .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--rosa);color:#fff;
+    padding:.95rem 1.7rem;border-radius:999px;font-weight:800;box-shadow:var(--sombra-sm);
+    transition:transform .15s ease,background .2s ease;cursor:pointer;border:none;font-size:1rem}
+  .btn:hover{background:var(--rosa-osc);transform:translateY(-2px)}
+  .btn-wa{background:#25D366}
+  .btn-wa:hover{background:#1eb157}
+  .btn-ghost{background:#fff;color:var(--rosa-osc);box-shadow:var(--sombra-sm)}
+  .btn-ghost:hover{background:var(--crema-2)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,242,.9);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--crema-3)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:12px 22px;max-width:1120px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:.6rem}
+  .brand img{width:42px;height:42px;border-radius:50%;box-shadow:var(--sombra-sm)}
+  .brand .word{font-family:'Playfair Display',serif;font-weight:700;font-size:1.35rem;color:var(--cacao);line-height:1}
+  .brand .word i{font-family:'Dancing Script',cursive;font-style:normal;color:var(--rosa);font-weight:700;font-size:1.5rem}
+  nav.links ul{display:none;gap:1.6rem;list-style:none}
+  nav.links a{font-weight:700;color:var(--cacao-cl)}
+  nav.links a:hover{color:var(--rosa)}
+  .nav .btn{padding:.7rem 1.2rem;font-size:.95rem}
+  .nav-cta-text{display:none}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;
+    background:radial-gradient(circle at 12% 18%, var(--lila-cl), transparent 55%),
+               radial-gradient(circle at 92% 8%, #fbe1ea, transparent 52%),
+               var(--crema)}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;padding:54px 0 56px}
+  .hero h1{font-size:clamp(2.4rem,8vw,4.1rem);margin:.5rem 0 .7rem}
+  .hero h1 .acc{color:var(--rosa);font-style:italic}
+  .hero .lead{font-size:1.18rem;color:var(--cacao-cl);max-width:540px;margin-bottom:1.6rem}
+  .hero .cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
+  .hero-media{position:relative}
+  .hero-media img{width:100%;border-radius:28px;box-shadow:var(--sombra);aspect-ratio:4/3;object-fit:cover}
+  .hero-badge{position:absolute;left:-6px;bottom:-14px;background:#fff;border-radius:18px;
+    padding:.7rem 1rem;box-shadow:var(--sombra);display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:.92rem}
+  .hero-badge b{color:var(--rosa)}
+  .trustline{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:1.4rem;color:var(--cacao-cl);font-weight:600;font-size:.95rem}
+  .trustline span{display:inline-flex;align-items:center;gap:.4rem}
+
+  /* Secciones */
+  section{padding:64px 0}
+  .sec-head{text-align:center;max-width:620px;margin:0 auto 2.4rem}
+  .sec-head h2{font-size:clamp(1.9rem,5vw,2.5rem);margin-top:.3rem}
+  .sec-head p{color:var(--cacao-cl);margin-top:.5rem;font-size:1.05rem}
+
+  /* Propuesta de valor */
+  .vp{background:#fff}
+  .vp-grid{display:grid;grid-template-columns:1fr;gap:1.3rem}
+  .vp-card{background:var(--crema);border:1px solid var(--crema-3);border-radius:var(--radio);padding:1.6rem;transition:transform .15s,box-shadow .2s}
+  .vp-card:hover{transform:translateY(-3px);box-shadow:var(--sombra-sm)}
+  .vp-ic{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;
+    background:linear-gradient(135deg,var(--rosa-cl),var(--lila));margin-bottom:.9rem}
+  .vp-card h3{font-size:1.25rem;margin-bottom:.35rem}
+  .vp-card p{color:var(--cacao-cl);font-size:.98rem}
+
+  /* Galería */
+  .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+  .gal-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sombra-sm);cursor:pointer;background:var(--crema-2)}
+  .gal-item img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .4s ease}
+  .gal-item:hover img{transform:scale(1.06)}
+  .gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:.8rem .9rem .7rem;
+    background:linear-gradient(to top,rgba(74,46,42,.72),transparent);color:#fff;font-weight:700;font-size:.9rem;opacity:0;transition:opacity .25s}
+  .gal-item:hover .cap{opacity:1}
+  .gal-more{text-align:center;margin-top:2rem}
+
+  /* Cómo pedir */
+  .pedir{background:linear-gradient(180deg,var(--crema),var(--crema-2))}
+  .pasos{display:grid;grid-template-columns:1fr;gap:1.4rem;counter-reset:paso;margin-top:.5rem}
+  .paso{background:#fff;border-radius:var(--radio);padding:1.6rem 1.5rem 1.4rem;position:relative;box-shadow:var(--sombra-sm)}
+  .paso::before{counter-increment:paso;content:counter(paso);
+    position:absolute;top:-16px;left:20px;width:40px;height:40px;border-radius:50%;
+    background:linear-gradient(135deg,var(--rosa),var(--lila));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:var(--sombra-sm);font-family:'Playfair Display',serif}
+  .paso h3{margin:.5rem 0 .3rem;font-size:1.18rem}
+  .paso p{color:var(--cacao-cl);font-size:.97rem}
+
+  /* Sobre nosotros */
+  .sobre-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+  .sobre-media img{border-radius:24px;box-shadow:var(--sombra);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .sobre-text h2{font-size:clamp(1.8rem,5vw,2.4rem);margin:.3rem 0 .8rem}
+  .sobre-text p{color:var(--cacao-cl);margin-bottom:.9rem}
+  .tito-note{display:flex;gap:.8rem;align-items:flex-start;background:var(--crema-2);border-radius:16px;padding:1rem 1.1rem;border:1px dashed var(--rosa-cl)}
+  .tito-note .paw{font-size:1.5rem;line-height:1.2}
+  .tito-note p{margin:0;font-size:.96rem}
+
+  /* FAQ */
+  .faq{background:#fff}
+  .faq-list{max-width:760px;margin:0 auto;display:grid;gap:.8rem}
+  details{background:var(--crema);border:1px solid var(--crema-3);border-radius:16px;padding:.2rem .2rem;overflow:hidden}
+  summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;font-weight:800;color:var(--cacao);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;color:var(--rosa);font-weight:700;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 1.2rem 1.1rem;color:var(--cacao-cl);font-size:.98rem}
+
+  /* Cierre */
+  .cierre-wrap{padding:0 22px 70px}
+  .cierre{text-align:center;background:linear-gradient(135deg,var(--rosa),var(--lila));color:#fff;border-radius:30px;padding:54px 26px;max-width:1120px;margin:0 auto;position:relative;overflow:hidden}
+  .cierre h2{color:#fff;font-size:clamp(1.9rem,5vw,2.6rem)}
+  .cierre p{opacity:.96;margin:.7rem auto 1.7rem;max-width:520px;font-size:1.08rem}
+  .cierre .btn{background:#fff;color:var(--rosa-osc)}
+  .cierre .btn:hover{background:var(--crema-2)}
+  .cierre .meta{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:center;font-weight:600;opacity:.95}
+  .redes{display:flex;gap:.8rem;justify-content:center;margin-top:1.4rem}
+  .redes a{background:rgba(255,255,255,.22);min-width:46px;height:46px;padding:0 1rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;font-weight:800}
+  .redes a:hover{background:rgba(255,255,255,.36)}
+
+  footer{text-align:center;padding:34px 22px 110px;color:var(--cacao-cl);font-size:.9rem}
+  footer .fbrand{font-family:'Playfair Display',serif;font-weight:700;color:var(--cacao);font-size:1.1rem}
+  footer .fbrand i{font-family:'Dancing Script',cursive;color:var(--rosa);font-style:normal}
+
+  /* FAB */
+  .fab{position:fixed;bottom:20px;right:20px;z-index:60;background:#25D366;color:#fff;
+    display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.2rem;border-radius:999px;font-weight:800;
+    box-shadow:0 10px 26px rgba(37,211,102,.45);transition:transform .15s}
+  .fab:hover{transform:translateY(-2px)}
+  .fab svg{width:22px;height:22px;fill:#fff}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;background:rgba(33,18,16,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lb-close{position:absolute;top:18px;right:22px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1;font-weight:300}
+
+  @media(min-width:760px){
+    nav.links ul{display:flex}
+    .hero-grid{grid-template-columns:1.05fr .95fr;padding:72px 0 76px}
+    .vp-grid{grid-template-columns:repeat(3,1fr)}
+    .gal-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
+    .pasos{grid-template-columns:repeat(3,1fr)}
+    .sobre-grid{grid-template-columns:.95fr 1.05fr}
+    .nav-cta-text{display:inline}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a class="brand" href="#inicio" aria-label="Dulce Aury inicio">
+      <img src="assets/img/logo-circular.png" alt="Logo Dulce Aury" />
+      <span class="word"><i>Dulce</i> Aury</span>
+    </a>
+    <nav class="links">
+      <ul>
+        <li><a href="#pasteles">Pasteles</a></li>
+        <li><a href="#pedir">Cómo pedir</a></li>
+        <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/50250193398" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.04.89 2.19.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.46.21.52.32.07.11.07.64-.17 1.32z"/></svg>
+      <span class="nav-cta-text">Pedir por</span> WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Pastelería artística · Quetzaltenango, Guatemala</p>
+        <h1>Aquí <span class="acc">no hay menú</span>.<br>El diseño eres tú.</h1>
+        <p class="lead">En Dulce Aury cada pastel se crea a la medida de tu celebración. Cuéntanos qué imaginas —sabor, estilo, ocasión— y lo horneamos a mano para ti.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20cotizar%20un%20pastel%20personalizado" target="_blank" rel="noopener">Cotizar mi pastel</a>
+          <a class="btn btn-ghost" href="#pasteles">Ver creaciones</a>
+        </div>
+        <div class="trustline">
+          <span>🎂 Diseños 100% personalizados</span>
+          <span>👐 Hechos a mano</span>
+          <span>💬 Respuesta por WhatsApp</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <picture>
+          <source srcset="assets/img/hero-pastel-morado.webp" type="image/webp" />
+          <img src="assets/img/hero-pastel-morado.jpg" alt="Pastel artístico de varios pisos con flores moradas y detalles dorados de Dulce Aury" width="1600" height="1200" fetchpriority="high" />
+        </picture>
+        <div class="hero-badge">🏆 <span>Repostería <b>creativa</b> de Xela</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPUESTA DE VALOR -->
+<section class="vp" id="propuesta">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lo que nos hace diferentes</p>
+      <h2>Tu pastel no se elige de una lista</h2>
+      <p>La mayoría de pastelerías te dan un catálogo. Nosotros partimos de tu idea: la conversación es el primer ingrediente.</p>
+    </div>
+    <div class="vp-grid">
+      <div class="vp-card">
+        <div class="vp-ic">🎨</div>
+        <h3>Diseño a tu medida</h3>
+        <p>Mándanos una foto, un color o una idea suelta. Lo convertimos en un pastel que cuenta tu historia.</p>
+      </div>
+      <div class="vp-card">
+        <div class="vp-ic">🎉</div>
+        <h3>Para cada ocasión</h3>
+        <p>Bodas, cumpleaños, baby showers, XV años, aniversarios y esos antojos que no necesitan pretexto.</p>
+      </div>
+      <div class="vp-card">
+        <div class="vp-ic">👐</div>
+        <h3>Arte hecho a mano</h3>
+        <p>Cada detalle se trabaja artesanalmente, con ingredientes seleccionados y mucho cariño.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="pasteles">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Galería</p>
+      <h2>Una probadita de lo que creamos</h2>
+      <p>Todo se hace por pedido. Estas son ideas para inspirarte; el tuyo será único.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><picture><source srcset="assets/img/pastel-blanco-rosas.webp" type="image/webp"><img src="assets/img/pastel-blanco-rosas.jpg" alt="Pastel blanco de dos pisos con rosas color malva" loading="lazy"></picture><div class="cap">Elegante · rosas malva</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pasteles-florales.webp" type="image/webp"><img src="assets/img/pasteles-florales.jpg" alt="Pasteles con decoración floral artesanal" loading="lazy"></picture><div class="cap">Floral · ocasión especial</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pastel-chocolate.webp" type="image/webp"><img src="assets/img/pastel-chocolate.jpg" alt="Pastel de chocolate con frutos rojos" loading="lazy"></picture><div class="cap">Chocolate · frutos rojos</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pastel-infantil.webp" type="image/webp"><img src="assets/img/pastel-infantil.jpg" alt="Pastel infantil colorido de dos pisos" loading="lazy"></picture><div class="cap">Infantil · temático</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pasteles-flatlay.webp" type="image/webp"><img src="assets/img/pasteles-flatlay.jpg" alt="Variedad de pasteles en tonos malva vistos desde arriba" loading="lazy"></picture><div class="cap">Colección malva</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pasteles-blancos.webp" type="image/webp"><img src="assets/img/pasteles-blancos.jpg" alt="Trío de pasteles blancos elegantes" loading="lazy"></picture><div class="cap">Minimalista · bodas</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/pastel-tematico.webp" type="image/webp"><img src="assets/img/pastel-tematico.jpg" alt="Pastel temático morado de personaje" loading="lazy"></picture><div class="cap">Personajes · a pedido</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/tito-pastel-rosas.webp" type="image/webp"><img src="assets/img/tito-pastel-rosas.jpg" alt="Pastel con rosas acompañado de Tito, la mascota de Dulce Aury" loading="lazy"></picture><div class="cap">Con Tito 🐾</div></div>
+    </div>
+    <div class="gal-more">
+      <a class="btn btn-ghost" href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener">Ver más en Facebook →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO PEDIR -->
+<section class="pedir" id="pedir">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Pedir es muy fácil</p>
+      <h2>De tu idea a tu mesa en 3 pasos</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <h3>Escríbenos</h3>
+        <p>Mándanos un mensaje por WhatsApp con tu idea. Te contestamos personalmente.</p>
+      </div>
+      <div class="paso">
+        <h3>Diseñamos juntos</h3>
+        <p>Definimos sabor, tamaño, estilo y fecha de entrega. Te pasamos la cotización.</p>
+      </div>
+      <div class="paso">
+        <h3>Recíbelo fresco</h3>
+        <p>Lo horneamos y decoramos a mano para que llegue perfecto a tu celebración.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section id="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="sobre-media">
+        <picture>
+          <source srcset="assets/img/tito-pastel-rosas.webp" type="image/webp" />
+          <img src="assets/img/tito-pastel-rosas.jpg" alt="Tito, la mascota Shih Tzu de Dulce Aury, junto a un pastel artístico" loading="lazy" />
+        </picture>
+      </div>
+      <div class="sobre-text">
+        <p class="eyebrow">Sobre nosotros</p>
+        <h2>Dulce Aury nació de un antojo bien hecho</h2>
+        <p>Somos un emprendimiento familiar de Quetzaltenango dedicado a la repostería artística. Lo que empezó como pasteles para amigos y familia se volvió un oficio: convertir momentos en algo que se pueda compartir y recordar.</p>
+        <p>No trabajamos con catálogo porque creemos que cada celebración merece su propio diseño. Tú pones la idea; nosotros la horneamos.</p>
+        <div class="tito-note">
+          <span class="paw">🐾</span>
+          <p><strong>Y sí, también está Tito.</strong> Nuestro Shih Tzu se volvió la mascota de la casa y aparece de vez en cuando cuidando que cada pastel salga perfecto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Antes de pedir, lo básico</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>¿Cómo hago mi pedido?</summary>
+        <p>Por WhatsApp. Escríbenos con tu idea (ocasión, fecha, número de porciones y cualquier referencia) y te guiamos paso a paso hasta la cotización.</p>
+      </details>
+      <details>
+        <summary>¿Con cuánta anticipación debo pedir?</summary>
+        <p>Mientras antes, mejor. Los diseños personalizados toman tiempo, así que recomendamos escribir con varios días de anticipación —sobre todo en fechas especiales. Escríbenos y vemos disponibilidad para tu fecha.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta un pastel?</summary>
+        <p>El precio depende del tamaño, el diseño y los detalles. Como cada pastel es único, te damos una cotización exacta por WhatsApp según lo que imaginas.</p>
+      </details>
+      <details>
+        <summary>¿Hacen entregas?</summary>
+        <p>Atendemos Quetzaltenango (Xela) y alrededores. Coordinamos la entrega o el punto de recogida contigo al confirmar tu pedido.</p>
+      </details>
+      <details>
+        <summary>¿Qué sabores y estilos manejan?</summary>
+        <p>Desde clásicos como chocolate, vainilla y tres leches hasta diseños temáticos, florales o de personajes. Si tienes una idea, cuéntanosla: casi siempre se puede.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE / CONTACTO -->
+<div class="cierre-wrap" id="contacto">
+  <div class="cierre">
+    <h2>¿Lista tu próxima celebración?</h2>
+    <p>Escríbenos hoy y diseñemos juntos el pastel perfecto para tu momento especial.</p>
+    <a class="btn" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20cotizar%20un%20pastel" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+    <div class="meta">
+      <span>📱 +502 5019 3398</span>
+      <span>📍 Quetzaltenango, Guatemala</span>
+    </div>
+    <div class="redes">
+      <a href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.06 5.66 21.21 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.9h-2.34V22C18.34 21.21 22 17.06 22 12.06z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="fbrand"><i>Dulce</i> Aury</p>
+  <p style="margin-top:.3rem">Pastelería artística · Quetzaltenango, Guatemala 🇬🇹</p>
+  <p style="margin-top:.5rem;opacity:.8">Hecho con cariño — © <span id="anio"></span> Dulce Aury</p>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20cotizar%20un%20pastel" target="_blank" rel="noopener" title="Pedir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.04.89 2.19.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.46.21.52.32.07.11.07.64-.17 1.32z"/></svg>
+  WhatsApp
+</a>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" aria-hidden="true">
+  <span class="lb-close" id="lbClose" aria-label="Cerrar">&times;</span>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script>
+  document.getElementById('anio').textContent = new Date().getFullYear();
+  // Lightbox sencillo para la galería
+  (function(){
+    var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), close=document.getElementById('lbClose');
+    document.querySelectorAll('.gal-item img').forEach(function(img){
+      img.addEventListener('click',function(){
+        lbImg.src=img.src; lbImg.alt=img.alt; lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+      });
+    });
+    function hide(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+    close.addEventListener('click',hide);
+    lb.addEventListener('click',function(e){ if(e.target===lb) hide(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  })();
+</script>
+</body>
+</html>

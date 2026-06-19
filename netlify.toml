@@ -4,8 +4,10 @@
   publish = "."
   command = ""
 
-# Cabeceras de caché para que las imágenes carguen rápido en visitas repetidas.
+# Cabeceras de caché: rápido en visitas repetidas, pero permite ver
+# imágenes actualizadas dentro de ~1 día (sin quedar pegadas para siempre).
+# Para forzar un cambio al instante, súbelo con un ?v=N nuevo en el HTML.
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

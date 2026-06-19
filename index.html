@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#C9707D" />
 <link rel="canonical" href="https://dulceaury.com/" />
 
-<!-- Open Graph / redes -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_GT" />
 <meta property="og:site_name" content="Dulce Aury" />
@@ -25,7 +24,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
 
-<!-- SEO: negocio local -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,15 +33,23 @@
   "image": "https://dulceaury.com/assets/img/hero-pastel-morado.jpg",
   "url": "https://dulceaury.com/",
   "telephone": "+50250193398",
+  "priceRange": "$$",
   "areaServed": "Quetzaltenango, Guatemala",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Quetzaltenango",
-    "addressRegion": "Quetzaltenango",
-    "addressCountry": "GT"
-  },
-  "sameAs": ["https://www.facebook.com/dulceauryguatemala"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Quetzaltenango", "addressRegion": "Quetzaltenango", "addressCountry": "GT" },
+  "sameAs": ["https://www.facebook.com/dulceauryguatemala", "https://www.instagram.com/dulceaury/"],
   "slogan": "Aquí no hay menú. El diseño eres tú."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cómo hago mi pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Por WhatsApp. Escríbenos con tu idea (ocasión, fecha, número de porciones y referencias) y te guiamos paso a paso hasta la cotización." } },
+    { "@type": "Question", "name": "¿Con cuánta anticipación debo pedir?", "acceptedAnswer": { "@type": "Answer", "text": "Mientras antes mejor. Los diseños personalizados toman tiempo, así que recomendamos escribir con varios días de anticipación, sobre todo en fechas especiales." } },
+    { "@type": "Question", "name": "¿Cuánto cuesta un pastel?", "acceptedAnswer": { "@type": "Answer", "text": "El precio depende del tamaño, el diseño y los detalles. Como cada pastel es único, damos una cotización exacta por WhatsApp." } },
+    { "@type": "Question", "name": "¿Hacen entregas?", "acceptedAnswer": { "@type": "Answer", "text": "Atendemos Quetzaltenango (Xela) y alrededores. Coordinamos la entrega o el punto de recogida al confirmar el pedido." } }
+  ]
 }
 </script>
 
@@ -66,27 +72,35 @@
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
   .eyebrow{color:var(--oro);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+  :focus-visible{outline:3px solid var(--lila);outline-offset:2px;border-radius:6px}
 
   .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--rosa);color:#fff;
     padding:.95rem 1.7rem;border-radius:999px;font-weight:800;box-shadow:var(--sombra-sm);
-    transition:transform .15s ease,background .2s ease;cursor:pointer;border:none;font-size:1rem}
-  .btn:hover{background:var(--rosa-osc);transform:translateY(-2px)}
+    transition:transform .15s ease,background .2s ease,box-shadow .2s ease;cursor:pointer;border:none;font-size:1rem}
+  .btn:hover{background:var(--rosa-osc);transform:translateY(-2px);box-shadow:var(--sombra)}
+  .btn:active{transform:translateY(0)}
   .btn-wa{background:#25D366}
   .btn-wa:hover{background:#1eb157}
   .btn-ghost{background:#fff;color:var(--rosa-osc);box-shadow:var(--sombra-sm)}
   .btn-ghost:hover{background:var(--crema-2)}
 
+  .divider{height:2px;width:90px;margin:0 auto;border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--oro),transparent)}
+
   /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,248,242,.9);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--crema-3)}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,242,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--crema-3);transition:box-shadow .25s ease,background .25s ease}
+  header.scrolled{box-shadow:0 6px 22px rgba(74,46,42,.10);background:rgba(255,248,242,.96)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:12px 22px;max-width:1120px;margin:0 auto}
   .brand{display:flex;align-items:center;gap:.6rem}
   .brand img{width:42px;height:42px;border-radius:50%;box-shadow:var(--sombra-sm)}
   .brand .word{font-family:'Playfair Display',serif;font-weight:700;font-size:1.35rem;color:var(--cacao);line-height:1}
   .brand .word i{font-family:'Dancing Script',cursive;font-style:normal;color:var(--rosa);font-weight:700;font-size:1.5rem}
   nav.links ul{display:none;gap:1.6rem;list-style:none}
-  nav.links a{font-weight:700;color:var(--cacao-cl)}
+  nav.links a{font-weight:700;color:var(--cacao-cl);position:relative}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--rosa);transition:width .25s ease}
   nav.links a:hover{color:var(--rosa)}
+  nav.links a:hover::after{width:100%}
   .nav .btn{padding:.7rem 1.2rem;font-size:.95rem}
   .nav-cta-text{display:none}
 
@@ -110,34 +124,47 @@
 
   /* Secciones */
   section{padding:64px 0}
-  .sec-head{text-align:center;max-width:620px;margin:0 auto 2.4rem}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 2.2rem}
+  .sec-head .divider{margin-bottom:1rem}
   .sec-head h2{font-size:clamp(1.9rem,5vw,2.5rem);margin-top:.3rem}
   .sec-head p{color:var(--cacao-cl);margin-top:.5rem;font-size:1.05rem}
 
   /* Propuesta de valor */
   .vp{background:#fff}
   .vp-grid{display:grid;grid-template-columns:1fr;gap:1.3rem}
-  .vp-card{background:var(--crema);border:1px solid var(--crema-3);border-radius:var(--radio);padding:1.6rem;transition:transform .15s,box-shadow .2s}
-  .vp-card:hover{transform:translateY(-3px);box-shadow:var(--sombra-sm)}
+  .vp-card{background:var(--crema);border:1px solid var(--crema-3);border-radius:var(--radio);padding:1.6rem;transition:transform .18s,box-shadow .25s}
+  .vp-card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
   .vp-ic{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;
     background:linear-gradient(135deg,var(--rosa-cl),var(--lila));margin-bottom:.9rem}
   .vp-card h3{font-size:1.25rem;margin-bottom:.35rem}
   .vp-card p{color:var(--cacao-cl);font-size:.98rem}
 
-  /* Galería */
+  /* Ocasiones */
+  .ocasiones{background:linear-gradient(180deg,var(--crema),var(--crema-2))}
+  .chips{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;max-width:760px;margin:0 auto}
+  .chip{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--crema-3);
+    color:var(--cacao);font-weight:700;padding:.7rem 1.2rem;border-radius:999px;box-shadow:var(--sombra-sm);
+    transition:transform .15s,background .2s,color .2s}
+  .chip:hover{transform:translateY(-2px);background:var(--rosa);color:#fff}
+  .chip .ic{font-size:1.15rem}
+
+  /* Galerías */
   .gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
   .gal-item{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sombra-sm);cursor:pointer;background:var(--crema-2)}
-  .gal-item img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .4s ease}
-  .gal-item:hover img{transform:scale(1.06)}
+  .gal-item img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .45s ease}
+  .gal-item:hover img{transform:scale(1.07)}
   .gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:.8rem .9rem .7rem;
-    background:linear-gradient(to top,rgba(74,46,42,.72),transparent);color:#fff;font-weight:700;font-size:.9rem;opacity:0;transition:opacity .25s}
+    background:linear-gradient(to top,rgba(74,46,42,.74),transparent);color:#fff;font-weight:700;font-size:.9rem;opacity:0;transition:opacity .25s}
   .gal-item:hover .cap{opacity:1}
   .gal-more{text-align:center;margin-top:2rem}
+  .reales{background:#fff}
+  .reales .nota{text-align:center;color:var(--cacao-cl);font-size:.92rem;margin-top:1.3rem;font-style:italic}
 
   /* Cómo pedir */
-  .pedir{background:linear-gradient(180deg,var(--crema),var(--crema-2))}
+  .pedir{background:linear-gradient(180deg,var(--crema-2),var(--crema))}
   .pasos{display:grid;grid-template-columns:1fr;gap:1.4rem;counter-reset:paso;margin-top:.5rem}
-  .paso{background:#fff;border-radius:var(--radio);padding:1.6rem 1.5rem 1.4rem;position:relative;box-shadow:var(--sombra-sm)}
+  .paso{background:#fff;border-radius:var(--radio);padding:1.6rem 1.5rem 1.4rem;position:relative;box-shadow:var(--sombra-sm);transition:transform .18s,box-shadow .25s}
+  .paso:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
   .paso::before{counter-increment:paso;content:counter(paso);
     position:absolute;top:-16px;left:20px;width:40px;height:40px;border-radius:50%;
     background:linear-gradient(135deg,var(--rosa),var(--lila));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:var(--sombra-sm);font-family:'Playfair Display',serif}
@@ -154,9 +181,9 @@
   .tito-note p{margin:0;font-size:.96rem}
 
   /* FAQ */
-  .faq{background:#fff}
+  .faq{background:linear-gradient(180deg,var(--crema),var(--crema-2))}
   .faq-list{max-width:760px;margin:0 auto;display:grid;gap:.8rem}
-  details{background:var(--crema);border:1px solid var(--crema-3);border-radius:16px;padding:.2rem .2rem;overflow:hidden}
+  details{background:#fff;border:1px solid var(--crema-3);border-radius:16px;overflow:hidden}
   summary{cursor:pointer;list-style:none;padding:1rem 1.2rem;font-weight:800;color:var(--cacao);display:flex;justify-content:space-between;align-items:center;gap:1rem}
   summary::-webkit-details-marker{display:none}
   summary::after{content:"+";font-size:1.4rem;color:var(--rosa);font-weight:700;transition:transform .2s}
@@ -172,31 +199,45 @@
   .cierre .btn:hover{background:var(--crema-2)}
   .cierre .meta{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:center;font-weight:600;opacity:.95}
   .redes{display:flex;gap:.8rem;justify-content:center;margin-top:1.4rem}
-  .redes a{background:rgba(255,255,255,.22);min-width:46px;height:46px;padding:0 1rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;font-weight:800}
-  .redes a:hover{background:rgba(255,255,255,.36)}
+  .redes a{background:rgba(255,255,255,.22);min-width:46px;height:46px;padding:0 1.1rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;font-weight:800;transition:background .2s}
+  .redes a:hover{background:rgba(255,255,255,.38)}
 
   footer{text-align:center;padding:34px 22px 110px;color:var(--cacao-cl);font-size:.9rem}
   footer .fbrand{font-family:'Playfair Display',serif;font-weight:700;color:var(--cacao);font-size:1.1rem}
   footer .fbrand i{font-family:'Dancing Script',cursive;color:var(--rosa);font-style:normal}
 
-  /* FAB */
+  /* FAB + back-to-top */
   .fab{position:fixed;bottom:20px;right:20px;z-index:60;background:#25D366;color:#fff;
     display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.2rem;border-radius:999px;font-weight:800;
     box-shadow:0 10px 26px rgba(37,211,102,.45);transition:transform .15s}
   .fab:hover{transform:translateY(-2px)}
   .fab svg{width:22px;height:22px;fill:#fff}
+  .top{position:fixed;bottom:24px;left:20px;z-index:60;width:46px;height:46px;border-radius:50%;
+    background:#fff;color:var(--rosa-osc);border:1px solid var(--crema-3);box-shadow:var(--sombra-sm);
+    display:flex;align-items:center;justify-content:center;font-size:1.3rem;cursor:pointer;
+    opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}
+  .top.show{opacity:1;pointer-events:auto;transform:none}
 
   /* Lightbox */
-  .lb{position:fixed;inset:0;background:rgba(33,18,16,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .lb{position:fixed;inset:0;background:rgba(33,18,16,.9);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
   .lb.open{display:flex}
   .lb img{max-width:92vw;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
   .lb-close{position:absolute;top:18px;right:22px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1;font-weight:300}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
 
   @media(min-width:760px){
     nav.links ul{display:flex}
     .hero-grid{grid-template-columns:1.05fr .95fr;padding:72px 0 76px}
     .vp-grid{grid-template-columns:repeat(3,1fr)}
     .gal-grid{grid-template-columns:repeat(4,1fr);gap:1rem}
+    .reales .gal-grid{grid-template-columns:repeat(3,1fr)}
     .pasos{grid-template-columns:repeat(3,1fr)}
     .sobre-grid{grid-template-columns:.95fr 1.05fr}
     .nav-cta-text{display:inline}
@@ -206,17 +247,18 @@
 <body>
 
 <!-- HEADER -->
-<header>
+<header id="top">
   <div class="nav">
     <a class="brand" href="#inicio" aria-label="Dulce Aury inicio">
-      <img src="assets/img/logo-circular.png" alt="Logo Dulce Aury" />
+      <img src="assets/img/logo-circular.png" alt="Logo Dulce Aury" width="42" height="42" />
       <span class="word"><i>Dulce</i> Aury</span>
     </a>
-    <nav class="links">
+    <nav class="links" aria-label="Principal">
       <ul>
         <li><a href="#pasteles">Pasteles</a></li>
+        <li><a href="#reales">Entregas</a></li>
         <li><a href="#pedir">Cómo pedir</a></li>
-        <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#sobre">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -248,7 +290,7 @@
       <div class="hero-media">
         <picture>
           <source srcset="assets/img/hero-pastel-morado.webp?v=2" type="image/webp" />
-          <img src="assets/img/hero-pastel-morado.jpg?v=2" alt="Pastel artístico de tres pisos en tonos dusty rose, crema y dorado, acompañado de Tito, la mascota de Dulce Aury" width="1536" height="1024" fetchpriority="high" />
+          <img src="assets/img/hero-pastel-morado.jpg?v=2" alt="Pastel artístico de tres pisos en tonos dusty rose, crema y dorado, acompañado de Tito, la mascota de Dulce Aury" fetchpriority="high" />
         </picture>
         <div class="hero-badge">🏆 <span>Repostería <b>creativa</b> de Xela</span></div>
       </div>
@@ -259,40 +301,50 @@
 <!-- PROPUESTA DE VALOR -->
 <section class="vp" id="propuesta">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
       <p class="eyebrow">Lo que nos hace diferentes</p>
       <h2>Tu pastel no se elige de una lista</h2>
       <p>La mayoría de pastelerías te dan un catálogo. Nosotros partimos de tu idea: la conversación es el primer ingrediente.</p>
     </div>
-    <div class="vp-grid">
-      <div class="vp-card">
-        <div class="vp-ic">🎨</div>
-        <h3>Diseño a tu medida</h3>
-        <p>Mándanos una foto, un color o una idea suelta. Lo convertimos en un pastel que cuenta tu historia.</p>
-      </div>
-      <div class="vp-card">
-        <div class="vp-ic">🎉</div>
-        <h3>Para cada ocasión</h3>
-        <p>Bodas, cumpleaños, baby showers, XV años, aniversarios y esos antojos que no necesitan pretexto.</p>
-      </div>
-      <div class="vp-card">
-        <div class="vp-ic">👐</div>
-        <h3>Arte hecho a mano</h3>
-        <p>Cada detalle se trabaja artesanalmente, con ingredientes seleccionados y mucho cariño.</p>
-      </div>
+    <div class="vp-grid reveal">
+      <div class="vp-card"><div class="vp-ic">🎨</div><h3>Diseño a tu medida</h3><p>Mándanos una foto, un color o una idea suelta. Lo convertimos en un pastel que cuenta tu historia.</p></div>
+      <div class="vp-card"><div class="vp-ic">🎉</div><h3>Para cada ocasión</h3><p>Bodas, cumpleaños, baby showers, XV años, aniversarios y esos antojos que no necesitan pretexto.</p></div>
+      <div class="vp-card"><div class="vp-ic">👐</div><h3>Arte hecho a mano</h3><p>Cada detalle se trabaja artesanalmente, con ingredientes seleccionados y mucho cariño.</p></div>
     </div>
   </div>
 </section>
 
-<!-- GALERÍA -->
+<!-- OCASIONES -->
+<section class="ocasiones" id="ocasiones">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
+      <p class="eyebrow">Para cada momento</p>
+      <h2>¿Qué celebras?</h2>
+      <p>Toca la ocasión y escríbenos directo por WhatsApp con tu idea.</p>
+    </div>
+    <div class="chips reveal">
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20para%20una%20boda" target="_blank" rel="noopener"><span class="ic">💍</span> Bodas</a>
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20para%20XV%20a%C3%B1os" target="_blank" rel="noopener"><span class="ic">👑</span> XV años</a>
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20de%20cumplea%C3%B1os" target="_blank" rel="noopener"><span class="ic">🎂</span> Cumpleaños</a>
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20para%20baby%20shower" target="_blank" rel="noopener"><span class="ic">🍼</span> Baby shower</a>
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20para%20un%20bautizo" target="_blank" rel="noopener"><span class="ic">🕊️</span> Bautizos</a>
+      <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20pasteles%20para%20un%20evento%20o%20empresa" target="_blank" rel="noopener"><span class="ic">✨</span> Eventos</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA (creaciones) -->
 <section id="pasteles">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
       <p class="eyebrow">Galería</p>
       <h2>Una probadita de lo que creamos</h2>
       <p>Todo se hace por pedido. Estas son ideas para inspirarte; el tuyo será único.</p>
     </div>
-    <div class="gal-grid">
+    <div class="gal-grid reveal">
       <div class="gal-item"><picture><source srcset="assets/img/pastel-blanco-rosas.webp" type="image/webp"><img src="assets/img/pastel-blanco-rosas.jpg" alt="Pastel blanco de dos pisos con rosas color malva" loading="lazy"></picture><div class="cap">Elegante · rosas malva</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/pasteles-florales.webp" type="image/webp"><img src="assets/img/pasteles-florales.jpg" alt="Pasteles con decoración floral artesanal" loading="lazy"></picture><div class="cap">Floral · ocasión especial</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/pastel-chocolate.webp" type="image/webp"><img src="assets/img/pastel-chocolate.jpg" alt="Pastel de chocolate con frutos rojos" loading="lazy"></picture><div class="cap">Chocolate · frutos rojos</div></div>
@@ -302,32 +354,42 @@
       <div class="gal-item"><picture><source srcset="assets/img/pastel-tematico.webp" type="image/webp"><img src="assets/img/pastel-tematico.jpg" alt="Pastel temático morado de personaje" loading="lazy"></picture><div class="cap">Personajes · a pedido</div></div>
       <div class="gal-item"><picture><source srcset="assets/img/tito-pastel-rosas.webp" type="image/webp"><img src="assets/img/tito-pastel-rosas.jpg" alt="Pastel con rosas acompañado de Tito, la mascota de Dulce Aury" loading="lazy"></picture><div class="cap">Con Tito 🐾</div></div>
     </div>
-    <div class="gal-more">
-      <a class="btn btn-ghost" href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener">Ver más en Facebook →</a>
+  </div>
+</section>
+
+<!-- ENTREGAS REALES -->
+<section class="reales" id="reales">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
+      <p class="eyebrow">Entregas reales</p>
+      <h2>Pasteles que ya llegaron a su fiesta</h2>
+      <p>Creaciones reales que hemos entregado a clientes de Xela. La prueba está en cada detalle.</p>
     </div>
+    <div class="gal-grid reveal">
+      <div class="gal-item"><picture><source srcset="assets/img/real-pisos-lila.webp" type="image/webp"><img src="assets/img/real-pisos-lila.jpg" alt="Pastel real de pisos blanco con encaje lila y rosas moradas" loading="lazy"></picture><div class="cap">Pisos · encaje lila</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/real-callas.webp" type="image/webp"><img src="assets/img/real-callas.jpg" alt="Pastel real blanco texturizado con flores rosadas" loading="lazy"></picture><div class="cap">Flores · elegante</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/real-mensaje.webp" type="image/webp"><img src="assets/img/real-mensaje.jpg" alt="Pastel real lila con mensaje personalizado para mamá" loading="lazy"></picture><div class="cap">Mensaje a tu medida</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/real-baby.webp" type="image/webp"><img src="assets/img/real-baby.jpg" alt="Pastel real de baby shower con elefante y rosetas rosadas" loading="lazy"></picture><div class="cap">Baby shower</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/real-clasico.webp" type="image/webp"><img src="assets/img/real-clasico.jpg" alt="Pastel real estilo esmoquin con moño negro" loading="lazy"></picture><div class="cap">Clásico · elegante</div></div>
+      <div class="gal-item"><picture><source srcset="assets/img/real-infantil.webp" type="image/webp"><img src="assets/img/real-infantil.jpg" alt="Pastel real infantil rosado con personajes" loading="lazy"></picture><div class="cap">Infantil · personajes</div></div>
+    </div>
+    <p class="nota">📸 Fotos de pedidos reales · ¿Quieres ver más del día a día? <a href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener" style="color:var(--rosa);font-weight:700">Síguenos en Facebook</a></p>
   </div>
 </section>
 
 <!-- CÓMO PEDIR -->
 <section class="pedir" id="pedir">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
       <p class="eyebrow">Pedir es muy fácil</p>
       <h2>De tu idea a tu mesa en 3 pasos</h2>
     </div>
-    <div class="pasos">
-      <div class="paso">
-        <h3>Escríbenos</h3>
-        <p>Mándanos un mensaje por WhatsApp con tu idea. Te contestamos personalmente.</p>
-      </div>
-      <div class="paso">
-        <h3>Diseñamos juntos</h3>
-        <p>Definimos sabor, tamaño, estilo y fecha de entrega. Te pasamos la cotización.</p>
-      </div>
-      <div class="paso">
-        <h3>Recíbelo fresco</h3>
-        <p>Lo horneamos y decoramos a mano para que llegue perfecto a tu celebración.</p>
-      </div>
+    <div class="pasos reveal">
+      <div class="paso"><h3>Escríbenos</h3><p>Mándanos un mensaje por WhatsApp con tu idea. Te contestamos personalmente.</p></div>
+      <div class="paso"><h3>Diseñamos juntos</h3><p>Definimos sabor, tamaño, estilo y fecha de entrega. Te pasamos la cotización.</p></div>
+      <div class="paso"><h3>Recíbelo fresco</h3><p>Lo horneamos y decoramos a mano para que llegue perfecto a tu celebración.</p></div>
     </div>
   </div>
 </section>
@@ -336,13 +398,14 @@
 <section id="sobre">
   <div class="wrap">
     <div class="sobre-grid">
-      <div class="sobre-media">
+      <div class="sobre-media reveal">
         <picture>
           <source srcset="assets/img/tito-pastel-rosas.webp" type="image/webp" />
           <img src="assets/img/tito-pastel-rosas.jpg" alt="Tito, la mascota Shih Tzu de Dulce Aury, junto a un pastel artístico" loading="lazy" />
         </picture>
       </div>
-      <div class="sobre-text">
+      <div class="sobre-text reveal">
+        <span class="divider" style="margin:0 0 1rem 0"></span>
         <p class="eyebrow">Sobre nosotros</p>
         <h2>Dulce Aury nació de un antojo bien hecho</h2>
         <p>Somos un emprendimiento familiar de Quetzaltenango dedicado a la repostería artística. Lo que empezó como pasteles para amigos y familia se volvió un oficio: convertir momentos en algo que se pueda compartir y recordar.</p>
@@ -359,38 +422,24 @@
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head reveal">
+      <span class="divider"></span>
       <p class="eyebrow">Preguntas frecuentes</p>
       <h2>Antes de pedir, lo básico</h2>
     </div>
-    <div class="faq-list">
-      <details>
-        <summary>¿Cómo hago mi pedido?</summary>
-        <p>Por WhatsApp. Escríbenos con tu idea (ocasión, fecha, número de porciones y cualquier referencia) y te guiamos paso a paso hasta la cotización.</p>
-      </details>
-      <details>
-        <summary>¿Con cuánta anticipación debo pedir?</summary>
-        <p>Mientras antes, mejor. Los diseños personalizados toman tiempo, así que recomendamos escribir con varios días de anticipación —sobre todo en fechas especiales. Escríbenos y vemos disponibilidad para tu fecha.</p>
-      </details>
-      <details>
-        <summary>¿Cuánto cuesta un pastel?</summary>
-        <p>El precio depende del tamaño, el diseño y los detalles. Como cada pastel es único, te damos una cotización exacta por WhatsApp según lo que imaginas.</p>
-      </details>
-      <details>
-        <summary>¿Hacen entregas?</summary>
-        <p>Atendemos Quetzaltenango (Xela) y alrededores. Coordinamos la entrega o el punto de recogida contigo al confirmar tu pedido.</p>
-      </details>
-      <details>
-        <summary>¿Qué sabores y estilos manejan?</summary>
-        <p>Desde clásicos como chocolate, vainilla y tres leches hasta diseños temáticos, florales o de personajes. Si tienes una idea, cuéntanosla: casi siempre se puede.</p>
-      </details>
+    <div class="faq-list reveal">
+      <details><summary>¿Cómo hago mi pedido?</summary><p>Por WhatsApp. Escríbenos con tu idea (ocasión, fecha, número de porciones y cualquier referencia) y te guiamos paso a paso hasta la cotización.</p></details>
+      <details><summary>¿Con cuánta anticipación debo pedir?</summary><p>Mientras antes, mejor. Los diseños personalizados toman tiempo, así que recomendamos escribir con varios días de anticipación —sobre todo en fechas especiales. Escríbenos y vemos disponibilidad para tu fecha.</p></details>
+      <details><summary>¿Cuánto cuesta un pastel?</summary><p>El precio depende del tamaño, el diseño y los detalles. Como cada pastel es único, te damos una cotización exacta por WhatsApp según lo que imaginas.</p></details>
+      <details><summary>¿Hacen entregas?</summary><p>Atendemos Quetzaltenango (Xela) y alrededores. Coordinamos la entrega o el punto de recogida contigo al confirmar tu pedido.</p></details>
+      <details><summary>¿Qué sabores y estilos manejan?</summary><p>Desde clásicos como chocolate, vainilla y tres leches hasta diseños temáticos, florales o de personajes. Si tienes una idea, cuéntanosla: casi siempre se puede.</p></details>
     </div>
   </div>
 </section>
 
 <!-- CIERRE / CONTACTO -->
 <div class="cierre-wrap" id="contacto">
-  <div class="cierre">
+  <div class="cierre reveal">
     <h2>¿Lista tu próxima celebración?</h2>
     <p>Escríbenos hoy y diseñemos juntos el pastel perfecto para tu momento especial.</p>
     <a class="btn" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20cotizar%20un%20pastel" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
@@ -402,6 +451,10 @@
       <a href="https://www.facebook.com/dulceauryguatemala" target="_blank" rel="noopener" title="Facebook">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.06 5.66 21.21 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.9h-2.34V22C18.34 21.21 22 17.06 22 12.06z"/></svg>
         Facebook
+      </a>
+      <a href="https://www.instagram.com/dulceaury/" target="_blank" rel="noopener" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-.99.04-1.53.21-1.89.35-.47.18-.81.4-1.17.76-.36.36-.58.7-.76 1.17-.14.36-.31.9-.35 1.89-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.99.21 1.53.35 1.89.18.47.4.81.76 1.17.36.36.7.58 1.17.76.36.14.9.31 1.89.35 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.99-.04 1.53-.21 1.89-.35.47-.18.81-.4 1.17-.76.36-.36.58-.7.76-1.17.14-.36.31-.9.35-1.89.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.99-.21-1.53-.35-1.89a3.15 3.15 0 0 0-.76-1.17 3.15 3.15 0 0 0-1.17-.76c-.36-.14-.9-.31-1.89-.35-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 1 0 10.92 5.46 5.46 0 0 1 0-10.92zm0 9a3.54 3.54 0 1 0 0-7.08 3.54 3.54 0 0 0 0 7.08zm6.95-9.22a1.28 1.28 0 1 1-2.56 0 1.28 1.28 0 0 1 2.56 0z"/></svg>
+        Instagram
       </a>
     </div>
   </div>
@@ -419,6 +472,9 @@
   WhatsApp
 </a>
 
+<!-- Volver arriba -->
+<button class="top" id="toTop" aria-label="Volver arriba">↑</button>
+
 <!-- Lightbox -->
 <div class="lb" id="lb" aria-hidden="true">
   <span class="lb-close" id="lbClose" aria-label="Cerrar">&times;</span>
@@ -427,7 +483,8 @@
 
 <script>
   document.getElementById('anio').textContent = new Date().getFullYear();
-  // Lightbox sencillo para la galería
+
+  // Lightbox para las galerías
   (function(){
     var lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), close=document.getElementById('lbClose');
     document.querySelectorAll('.gal-item img').forEach(function(img){
@@ -439,6 +496,28 @@
     close.addEventListener('click',hide);
     lb.addEventListener('click',function(e){ if(e.target===lb) hide(); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  })();
+
+  // Header con sombra + botón volver arriba
+  (function(){
+    var header=document.getElementById('top'), toTop=document.getElementById('toTop');
+    function onScroll(){
+      var y=window.scrollY||document.documentElement.scrollTop;
+      header.classList.toggle('scrolled', y>10);
+      toTop.classList.toggle('show', y>600);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  })();
+
+  // Reveal al hacer scroll
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
   })();
 </script>
 </body>

@@ -59,7 +59,7 @@
     --rosa:#C9707D; --rosa-cl:#E0939E; --rosa-osc:#B05a67;
     --lila:#B98FC9; --lila-cl:#D9C2E6;
     --cacao:#4A2E2A; --cacao-cl:#7A5A52;
-    --oro:#C9A24B; --blanco:#fff;
+    --oro:#C9A24B; --oro-txt:#8C6A16; --blanco:#fff;
     --sombra:0 14px 40px rgba(74,46,42,.12);
     --sombra-sm:0 6px 18px rgba(74,46,42,.10);
     --radio:22px;
@@ -71,7 +71,7 @@
   img{max-width:100%;display:block}
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-  .eyebrow{color:var(--oro);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
+  .eyebrow{color:var(--oro-txt);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem}
   :focus-visible{outline:3px solid var(--lila);outline-offset:2px;border-radius:6px}
 
   .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--rosa);color:#fff;
@@ -103,6 +103,17 @@
   nav.links a:hover::after{width:100%}
   .nav .btn{padding:.7rem 1.2rem;font-size:.95rem}
   .nav-cta-text{display:none}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--cacao);font-size:1.7rem;line-height:1;padding:.2rem .45rem}
+  @media(max-width:759px){
+    .nav-toggle{display:inline-flex}
+    nav.links{position:absolute;top:100%;left:0;right:0;background:rgba(255,248,242,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--crema-3);box-shadow:var(--sombra);max-height:0;overflow:hidden;transition:max-height .3s ease}
+    nav.links.open{max-height:360px}
+    nav.links ul{display:flex;flex-direction:column;gap:0;padding:.4rem 22px 1rem}
+    nav.links li{border-bottom:1px solid var(--crema-3)}
+    nav.links li:last-child{border-bottom:none}
+    nav.links a{display:block;padding:.9rem 0;font-size:1.05rem}
+    nav.links a::after{display:none}
+  }
 
   /* Hero */
   .hero{position:relative;overflow:hidden;
@@ -115,7 +126,7 @@
   .hero .lead{font-size:1.18rem;color:var(--cacao-cl);max-width:540px;margin-bottom:1.6rem}
   .hero .cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
   .hero-media{position:relative}
-  .hero-media img{width:100%;height:auto;border-radius:28px;box-shadow:var(--sombra);display:block}
+  .hero-media img{width:100%;height:auto;aspect-ratio:3/2;border-radius:28px;box-shadow:var(--sombra);display:block}
   .hero-badge{position:absolute;left:-6px;bottom:-14px;background:#fff;border-radius:18px;
     padding:.7rem 1rem;box-shadow:var(--sombra);display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:.92rem}
   .hero-badge b{color:var(--rosa)}
@@ -253,7 +264,7 @@
       <img src="assets/img/logo-circular.png" alt="Logo Dulce Aury" width="42" height="42" />
       <span class="word"><i>Dulce</i> Aury</span>
     </a>
-    <nav class="links" aria-label="Principal">
+    <nav class="links" id="navLinks" aria-label="Principal">
       <ul>
         <li><a href="#pasteles">Pasteles</a></li>
         <li><a href="#reales">Entregas</a></li>
@@ -266,6 +277,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.04.89 2.19.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.6.75 1.87.89.27.14.46.21.52.32.07.11.07.64-.17 1.32z"/></svg>
       <span class="nav-cta-text">Pedir por</span> WhatsApp
     </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -518,6 +530,20 @@
       entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
     },{threshold:.12});
     els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // Menú móvil
+  (function(){
+    var t=document.getElementById('navToggle'), m=document.getElementById('navLinks');
+    if(!t||!m) return;
+    t.addEventListener('click', function(){
+      var open=m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+      t.textContent = open ? '✕' : '☰';
+    });
+    m.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ m.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.textContent='☰'; });
+    });
   })();
 </script>
 </body>

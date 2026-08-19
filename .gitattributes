@@ -1,0 +1,43 @@
+# Los archivos binarios NO se tocan.
+#
+# Esta maquina tiene core.autocrlf=true. Sin estas lineas, Git le cambia los
+# saltos de linea DENTRO del archivo y lo deja corrupto para quien lo clone.
+# El dano NO se ve en la maquina de quien sube: aparece en el clon.
+#
+# Medido el 18-ago-2026 por la torre de Gobernanza, barriendo los 30 repos a
+# partir de un aviso de Domettia: en BPulse habia 10 PDF de cliente ya danados
+# (una cotizacion recien clonada pesaba 3,387 bytes contra los 3,313 del disco,
+# con huella distinta). El culpable fue `* text=auto`, que le pide a Git
+# adivinar: con esos PDF adivino mal.
+#
+# Regla del portafolio: los binarios se NOMBRAN, no se adivinan.
+
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.avif  binary
+*.ico   binary
+*.svgz  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+*.xlsx  binary
+*.xls   binary
+*.docx  binary
+*.doc   binary
+*.pptx  binary
+*.ppt   binary
+*.zip   binary
+*.gz    binary
+*.7z    binary
+*.rar   binary
+*.mp4   binary
+*.mp3   binary
+*.mov   binary
+*.wav   binary
+*.kdbx  binary

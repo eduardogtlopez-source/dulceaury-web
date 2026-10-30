@@ -4,6 +4,7 @@ import { measurementConfig } from "./medicion-config.js?v=2";
 export const buttons = Object.freeze({
   cabecera: { occasion: "general", placement: "cabecera" },
   principal: { occasion: "general", placement: "principal" },
+  entregas: { occasion: "general", placement: "entregas_reales" },
   bodas: { occasion: "bodas", placement: "ocasiones" },
   xv_anos: { occasion: "xv_anos", placement: "ocasiones" },
   cumpleanos: { occasion: "cumpleanos", placement: "ocasiones" },

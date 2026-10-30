@@ -1,7 +1,7 @@
 // Borrador efímero: no envía formularios, no guarda datos ni carga servicios.
 const occasions = Object.freeze({ general:'Aún por definir', cumpleanos:'Cumpleaños', bodas:'Boda', xv_anos:'XV años', baby_shower:'Baby shower', bautizos:'Bautizo', eventos:'Otro evento' });
 const deliveries = Object.freeze({ pendiente:'Aún por definir', recoger:'Prefiero recoger', entrega:'Quiero consultar entrega (por confirmar)' });
-const sources = new Set(['principal','bodas','xv_anos','cumpleanos','baby_shower','bautizos','eventos']);
+const sources = new Set(['principal','bodas','xv_anos','cumpleanos','baby_shower','bautizos','eventos','entregas']);
 const section = document.getElementById('cotizar');
 const form = document.getElementById('cotizacion-form');
 const occasion = document.getElementById('cotizacion-ocasion');
@@ -72,7 +72,7 @@ document.addEventListener('click', event => {
   if (!link || link.closest('#cotizar') || !sources.has(link.dataset.waButton)) return;
   event.preventDefault();
   onward.dataset.waButton = link.dataset.waButton;
-  if (link.dataset.waButton !== 'principal') occasion.value = link.dataset.waButton;
+  if (Object.hasOwn(occasions, link.dataset.waButton)) occasion.value = link.dataset.waButton;
   update();
   section.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',block:'start'});
   document.getElementById('cotizacion-titulo').focus({preventScroll:true});
@@ -82,6 +82,12 @@ update();
 section.hidden = false;
 document.getElementById('ocasiones-ayuda').textContent = 'Elige la ocasión y cuéntanos tu idea para preparar tu mensaje.';
 // Evitar que los controles flotantes tapen campos o la salida del formulario.
-if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
-  document.body.classList.toggle('cotizacion-visible', entry.isIntersecting);
-}, {threshold:0}).observe(section);
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle('cotizacion-visible', entry.isIntersecting);
+  }, {threshold:0}).observe(section);
+  const bridge = document.querySelector('.reales-puente');
+  if (bridge) new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle('reales-puente-visible', entry.isIntersecting);
+  }, {threshold:0}).observe(bridge);
+}

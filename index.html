@@ -105,7 +105,13 @@
   .nav-cta-text{display:none}
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--cacao);font-size:1.7rem;line-height:1;padding:.2rem .45rem}
   @media(max-width:759px){
-    .nav-toggle{display:inline-flex}
+    .nav{gap:8px;padding:12px}
+    .brand{flex-shrink:0;gap:6px;min-height:44px}
+    .brand img{flex-shrink:0}
+    .brand .word{white-space:nowrap}
+    .brand .word i{display:block}
+    .nav .btn{flex-shrink:0;gap:6px;min-height:44px;padding:.65rem .75rem;font-size:.875rem;white-space:nowrap}
+    .nav-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:0}
     nav.links{position:absolute;top:100%;left:0;right:0;background:rgba(255,248,242,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--crema-3);box-shadow:var(--sombra);max-height:0;overflow:hidden;transition:max-height .3s ease}
     nav.links.open{max-height:360px}
     nav.links ul{display:flex;flex-direction:column;gap:0;padding:.4rem 22px 1rem}
@@ -113,6 +119,11 @@
     nav.links li:last-child{border-bottom:none}
     nav.links a{display:block;padding:.9rem 0;font-size:1.05rem}
     nav.links a::after{display:none}
+  }
+  @media(max-width:359px){
+    .nav{gap:6px}
+    .brand .word{font-size:1.2rem}
+    .brand .word i{font-size:1.35rem}
   }
 
   /* Hero */

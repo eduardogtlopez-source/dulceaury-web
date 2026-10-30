@@ -1,5 +1,5 @@
 import { measurementConfig } from "./medicion-config.js?v=2";
-import { startMeasurement } from "./medicion.js?v=2";
+import { startMeasurement } from "./medicion.js?v=3";
 
 const installed = Symbol.for("dulceaury.consent");
 const preferenceKey = "dulceaury.analyticsConsent.v1";

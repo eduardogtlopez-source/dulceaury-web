@@ -19,6 +19,7 @@
 
 <link rel="icon" type="image/png" href="assets/img/logo-circular.png" />
 <link rel="apple-touch-icon" href="assets/img/logo-circular.png" />
+<link rel="stylesheet" href="assets/css/cotizacion.css?v=1" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -367,7 +368,7 @@
       <span class="divider"></span>
       <p class="eyebrow">Para cada momento</p>
       <h2>¿Qué celebras?</h2>
-      <p>Toca la ocasión y escríbenos directo por WhatsApp con tu idea.</p>
+      <p id="ocasiones-ayuda">Toca la ocasión y escríbenos directo por WhatsApp con tu idea.</p>
     </div>
     <div class="chips reveal">
       <a class="chip" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20un%20pastel%20para%20una%20boda" target="_blank" rel="noopener" data-wa-button="bodas"><span class="ic">💍</span> Bodas</a>
@@ -449,6 +450,73 @@
       <div class="paso"><h3>Escríbenos</h3><p>Mándanos un mensaje por WhatsApp con tu idea. Te contestamos personalmente.</p></div>
       <div class="paso"><h3>Diseñamos juntos</h3><p>Definimos sabor, tamaño, estilo y fecha de entrega. Te pasamos la cotización.</p></div>
       <div class="paso"><h3>Recíbelo fresco</h3><p>Lo horneamos y decoramos a mano para que llegue perfecto a tu celebración.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZACIÓN PERSONALIZADA, SIN SERVIDOR -->
+<section class="cotizacion" id="cotizar" hidden aria-labelledby="cotizacion-titulo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="divider"></span>
+      <p class="eyebrow">Hecho a tu medida</p>
+      <h2 id="cotizacion-titulo" tabindex="-1">Cuéntanos el pastel que imaginas</h2>
+      <p>Comparte lo que ya sabes. Lo demás lo diseñamos juntos.</p>
+    </div>
+    <div class="cotizacion-card">
+      <form id="cotizacion-form" novalidate aria-label="Detalles para cotizar tu pastel">
+        <p class="cotizacion-ayuda">Todos los campos son opcionales.</p>
+        <div class="cotizacion-campos">
+          <div class="cotizacion-campo">
+            <label for="cotizacion-ocasion">Ocasión</label>
+            <select id="cotizacion-ocasion">
+              <option value="general">Aún por definir</option>
+              <option value="cumpleanos">Cumpleaños</option>
+              <option value="bodas">Boda</option>
+              <option value="xv_anos">XV años</option>
+              <option value="baby_shower">Baby shower</option>
+              <option value="bautizos">Bautizo</option>
+              <option value="eventos">Otro evento</option>
+            </select>
+          </div>
+          <div class="cotizacion-campo">
+            <label for="cotizacion-fecha">Fecha de la celebración</label>
+            <input id="cotizacion-fecha" type="date" aria-describedby="cotizacion-fecha-ayuda" />
+            <small id="cotizacion-fecha-ayuda">Si no la sabes, déjala en blanco.</small>
+          </div>
+          <div class="cotizacion-campo">
+            <label for="cotizacion-porciones">Porciones aproximadas</label>
+            <input id="cotizacion-porciones" type="number" min="1" step="1" inputmode="numeric" placeholder="Ej. 25" />
+          </div>
+          <div class="cotizacion-campo">
+            <label for="cotizacion-entrega">Entrega o recogida</label>
+            <select id="cotizacion-entrega">
+              <option value="pendiente">Aún por definir</option>
+              <option value="recoger">Prefiero recoger</option>
+              <option value="entrega">Quiero consultar entrega</option>
+            </select>
+          </div>
+          <div class="cotizacion-campo cotizacion-ancho">
+            <label for="cotizacion-idea">¿Qué tienes en mente?</label>
+            <textarea id="cotizacion-idea" rows="3" maxlength="500" placeholder="Colores, tema, sabor o ese detalle especial…" aria-describedby="cotizacion-foto"></textarea>
+            <small id="cotizacion-foto">¿Tienes una foto de referencia? Puedes adjuntarla en WhatsApp.</small>
+          </div>
+        </div>
+      </form>
+      <aside class="cotizacion-resumen" aria-labelledby="cotizacion-resumen-titulo">
+        <p class="eyebrow">Así empieza nuestra conversación</p>
+        <h3 id="cotizacion-resumen-titulo">Tu mensaje está tomando forma</h3>
+        <pre id="cotizacion-mensaje" tabindex="0" aria-label="Mensaje preparado para WhatsApp"></pre>
+        <p id="cotizacion-error" class="cotizacion-error" role="alert"></p>
+        <a id="cotizacion-continuar" class="btn cotizacion-enviar" href="https://wa.me/50250193398" target="_blank" rel="noopener noreferrer" data-wa-button="principal">Continuar en WhatsApp <span aria-hidden="true">↗</span></a>
+        <p class="cotizacion-aclaracion">Se abrirá WhatsApp con tu mensaje. Revísalo y pulsa enviar allí.</p>
+        <button id="cotizacion-copiar" class="cotizacion-texto" type="button">Copiar mensaje</button>
+        <p id="cotizacion-estado" class="cotizacion-estado" role="status"></p>
+      </aside>
+    </div>
+    <div class="cotizacion-pie">
+      <p>Confirmaremos disponibilidad, precio y entrega por WhatsApp. Esto aún no reserva tu pedido.</p>
+      <a class="cotizacion-directo" href="https://wa.me/50250193398?text=Hola%20Dulce%20Aury%2C%20quiero%20cotizar%20un%20pastel" target="_blank" rel="noopener noreferrer" data-wa-button="contacto">Prefiero escribir directamente</a>
     </div>
   </div>
 </section>
@@ -660,6 +728,7 @@
     });
   })();
 </script>
-<script type="module" src="assets/js/medicion-bootstrap.js?v=3"></script>
+<script type="module" src="assets/js/cotizacion.js?v=1"></script>
+<script type="module" src="assets/js/medicion-bootstrap.js?v=4"></script>
 </body>
 </html>

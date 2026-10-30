@@ -1,0 +1,36 @@
+/* Cotización sin servidor: utiliza las fuentes y colores del sitio. */
+.cotizacion[hidden]{display:none}
+.cotizacion-visible :is(.fab,#toTop){visibility:hidden;pointer-events:none}
+.cotizacion{background:var(--crema);scroll-margin-top:110px}
+.cotizacion .sec-head>p:last-child{margin:.8rem auto 0;color:var(--cacao-cl);max-width:36rem}
+.cotizacion h2:focus{outline:none}
+.cotizacion-card{display:grid;grid-template-columns:1.1fr 1fr;border:1px solid #e6d6cc;border-radius:24px;overflow:hidden;background:#fffdfb;box-shadow:0 14px 40px #4a2e2a09}
+#cotizacion-form{padding:32px}
+.cotizacion-ayuda{font-size:.9rem;color:var(--cacao-cl);margin:0 0 22px}
+.cotizacion-campos{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+.cotizacion-campo{min-width:0}
+.cotizacion-ancho{grid-column:1/-1}
+.cotizacion-campo label{display:block;font-weight:800;font-size:.92rem;margin-bottom:8px;color:var(--cacao)}
+.cotizacion-campo input,.cotizacion-campo select,.cotizacion-campo textarea{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:48px;border:1px solid #997b6e;border-radius:10px;background:#fff;color:var(--cacao);font:inherit;font-size:16px;padding:11px 12px}
+.cotizacion-campo input[type=date]{min-height:48px;appearance:none}
+.cotizacion-campo textarea{resize:vertical;min-height:108px}
+.cotizacion-campo textarea::placeholder,.cotizacion-campo input::placeholder{color:#80675f;opacity:1}
+.cotizacion-campo small{display:block;font-size:.83rem;color:var(--cacao-cl);line-height:1.5;margin-top:7px}
+.cotizacion :is(input,select,textarea,button,a,pre):focus-visible{outline:3px solid #87505b;outline-offset:3px}
+.cotizacion-resumen{padding:32px;background:var(--crema-2);border-left:1px solid #e6d6cc;min-width:0}
+.cotizacion-resumen .eyebrow{font-size:.72rem;letter-spacing:.12em;color:#87505b}
+.cotizacion-resumen h3{font-size:1.45rem;line-height:1.3;margin:9px 0 18px}
+#cotizacion-mensaje{white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;font:inherit;font-size:.94rem;line-height:1.75;color:var(--cacao);margin:0 0 22px;user-select:text}
+.cotizacion .cotizacion-enviar{display:flex;justify-content:center;gap:8px;min-height:48px;padding:13px 20px;background:var(--cacao);color:#fffdfb;font-size:1rem;line-height:1.4;text-align:center;box-sizing:border-box}
+.cotizacion .cotizacion-enviar:hover{background:#653f39}
+.cotizacion-aclaracion{font-size:.83rem;line-height:1.5;color:var(--cacao-cl);margin:12px 0 4px}
+.cotizacion-texto,.cotizacion-directo{color:#75434d;text-decoration:underline;text-underline-offset:3px;font:inherit;font-size:.9rem;font-weight:800;min-height:44px;display:inline-flex;align-items:center}
+.cotizacion-texto{border:0;background:none;cursor:pointer;padding:8px 0}
+.cotizacion-estado{font-size:.85rem;line-height:1.5;margin:0;color:var(--cacao)}
+.cotizacion-error{font-size:.9rem;font-weight:800;color:#932b3e;line-height:1.5;margin:0}
+.cotizacion-error:not(:empty){margin:0 0 14px}
+.cotizacion-pie{text-align:center;margin:22px auto 0;max-width:650px}
+.cotizacion-pie p{font-size:.85rem;line-height:1.6;color:var(--cacao-cl);margin:0 0 4px}
+@media(max-width:900px){.cotizacion-card{grid-template-columns:1fr}.cotizacion-resumen{border-left:0;border-top:1px solid #e6d6cc}}
+@media(max-width:540px){.cotizacion{scroll-margin-top:95px}.cotizacion-card{border-radius:18px}#cotizacion-form,.cotizacion-resumen{padding:22px 18px}.cotizacion-campos{grid-template-columns:1fr;gap:19px}.cotizacion-ayuda{margin-bottom:20px}.cotizacion-resumen h3{font-size:1.35rem}.cotizacion .cotizacion-enviar{padding:13px 10px;font-size:.94rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}

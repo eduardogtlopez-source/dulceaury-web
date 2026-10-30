@@ -17,6 +17,7 @@ export const buttons = Object.freeze({
 const installed = Symbol.for("dulceaury.measurement");
 const viewed = Symbol.for("dulceaury.pageViewed");
 const hosts = new Set(["dulceaury.com", "www.dulceaury.com"]);
+const occasions = new Set(Object.values(buttons).map(button => button.occasion));
 
 export function startMeasurement(win, config = measurementConfig) {
   const doc = win.document;
@@ -70,12 +71,14 @@ export function startMeasurement(win, config = measurementConfig) {
     if (event.type === "auxclick" && event.button !== 1) return;
     const anchor = event.target.closest?.("a[data-wa-button]");
     if (!anchor || !Object.hasOwn(buttons, anchor.dataset.waButton)) return;
+    const destination = new URL(anchor.href);
+    if (destination.origin !== "https://wa.me" || destination.pathname !== "/50250193398") return;
     const entry = buttons[anchor.dataset.waButton];
     // Delegation covers keyboard activation and clicks on icons inside the link.
     // Keep the native href/target and do not delay, redirect or cancel navigation.
     send("whatsapp_click", {
       button_id: anchor.dataset.waButton,
-      occasion: entry.occasion,
+      occasion: anchor.id === "cotizacion-continuar" && occasions.has(anchor.dataset.waOccasion) ? anchor.dataset.waOccasion : entry.occasion,
       placement: entry.placement
     });
   }

@@ -101,10 +101,10 @@
   nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--rosa);transition:width .25s ease}
   nav.links a:hover{color:var(--rosa)}
   nav.links a:hover::after{width:100%}
-  .nav .btn{padding:.7rem 1.2rem;font-size:.95rem}
+  .nav .btn{padding:.7rem 1.2rem;font-size:.95rem;white-space:nowrap}
   .nav-cta-text{display:none}
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--cacao);font-size:1.7rem;line-height:1;padding:.2rem .45rem}
-  @media(max-width:759px){
+  @media(max-width:999px){
     .nav{gap:8px;padding:12px}
     .brand{flex-shrink:0;gap:6px;min-height:44px}
     .brand img{flex-shrink:0}
@@ -274,12 +274,17 @@
   }
 
   @media(min-width:760px){
-    nav.links ul{display:flex}
     .hero-grid{grid-template-columns:1.05fr .95fr;padding:72px 0 76px}
     .vp-grid{grid-template-columns:repeat(3,1fr)}
     .pasos{grid-template-columns:repeat(3,1fr)}
     .sobre-grid{grid-template-columns:.95fr 1.05fr}
+  }
+  @media(min-width:1000px){
+    nav.links ul{display:flex}
     .nav-cta-text{display:inline}
+  }
+  @media(min-width:760px) and (max-width:999px){
+    .nav .btn{margin-left:auto}
   }
 </style>
 </head>

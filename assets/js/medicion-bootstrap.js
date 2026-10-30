@@ -117,14 +117,19 @@ export function initializeMeasurement(win, config = measurementConfig) {
     .da-consent button:focus-visible,.da-consent-settings:focus-visible{outline:3px solid #8c6a16;outline-offset:3px}
     .da-consent-settings{display:block;margin:12px auto}.da-consent small{display:block;margin-top:10px}
     .da-consent-visible .fab{display:none}
-    @media(max-width:600px){.da-consent{margin:12px 16px;padding:14px}.da-consent-actions button{flex:1}}
+    @media(max-width:600px){
+      .da-consent{margin:8px 16px;padding:12px;font-size:14px;line-height:1.45}
+      .da-consent p{margin-bottom:8px}.da-consent strong{margin-bottom:2px}
+      .da-consent-actions{gap:8px}.da-consent-actions button{flex:1;padding:8px 12px}
+      .da-consent small{margin-top:8px;font-size:12px;line-height:1.5}
+    }
   `;
   doc.head.append(style);
   const panel = doc.createElement("aside");
   panel.className = "da-consent";
   panel.setAttribute("aria-label", "Estadísticas opcionales");
   panel.tabIndex = -1;
-  panel.innerHTML = `<p><strong>Estadísticas opcionales</strong>Si aceptas, Google Analytics usará cookies para contar visitas y clics a WhatsApp. No enviamos el texto de tus mensajes ni tu teléfono. Puedes cambiar tu elección cuando quieras.</p><div class="da-consent-actions"><button type="button" data-da-choice="granted">Permitir estadísticas</button><button type="button" data-da-choice="denied">Ahora no</button></div><small><a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Privacidad de Google</a></small>`;
+  panel.innerHTML = `<p><strong>Estadísticas opcionales</strong>Con tu permiso, Google Analytics usa cookies para contar visitas y clics a WhatsApp. Sin mensajes ni teléfono.</p><div class="da-consent-actions"><button type="button" data-da-choice="granted">Aceptar</button><button type="button" data-da-choice="denied">Rechazar</button></div><small><a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener noreferrer">Privacidad de Google</a> · Cambia tu elección al pie.</small>`;
   const header = doc.querySelector("header");
   if (header) header.after(panel); else doc.body.prepend(panel);
   panel.querySelector('[data-da-choice="granted"]').addEventListener("click", accept);

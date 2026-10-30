@@ -1,4 +1,4 @@
-import { measurementConfig } from "./medicion-config.js?v=1";
+import { measurementConfig } from "./medicion-config.js?v=2";
 
 // Lista cerrada: nunca leer el mensaje de WhatsApp, el teléfono o datos del visitante.
 export const buttons = Object.freeze({
@@ -15,6 +15,7 @@ export const buttons = Object.freeze({
 });
 
 const installed = Symbol.for("dulceaury.measurement");
+const viewed = Symbol.for("dulceaury.pageViewed");
 const hosts = new Set(["dulceaury.com", "www.dulceaury.com"]);
 
 export function startMeasurement(win, config = measurementConfig) {
@@ -30,7 +31,7 @@ export function startMeasurement(win, config = measurementConfig) {
     state.reason = "privacy-preference";
     return state;
   }
-  if (!/^G-[A-Z0-9]{4,20}$/.test(config.existingGa4MeasurementId) || typeof win.gtag !== "function") {
+  if (!/^G-[A-Z0-9]{4,20}$/.test(config.ga4MeasurementId) || typeof win.gtag !== "function") {
     state.reason = "no-existing-receiver";
     return state;
   }
@@ -43,23 +44,26 @@ export function startMeasurement(win, config = measurementConfig) {
     try {
       // Override automatic URL context; never send query strings, hash or referral URL.
       receiver("event", name, {
-        send_to: config.existingGa4MeasurementId,
+        send_to: config.ga4MeasurementId,
         page_location: "https://dulceaury.com/",
         page_referrer: "",
         page_title: "Dulce Aury",
+        ...(config.debugMode === true ? { debug_mode: true } : {}),
         ...fields
       });
       state.queued += 1; // Queued by the adapter, NOT proof of delivery to the provider.
+      return true;
     } catch {
       // Optional analytics must not prevent someone contacting the business.
       // Expose the failure count for local checks; never claim successful delivery.
       state.failed += 1;
+      return false;
     }
   }
 
-  // A distinct event avoids duplicating the receiver's automatic page_view.
-  // This counts page loads, not unique people or sessions.
-  send("dulceaury_view");
+  // Automatic page views are disabled in the dedicated loader and stream.
+  // Do not count another view when a listener is deliberately restarted.
+  if (!doc[viewed] && send("page_view")) doc[viewed] = true;
   function onClick(event) {
     if (!event.isTrusted || event.defaultPrevented) return;
     if (event.type === "click" && event.button !== 0) return;
@@ -86,5 +90,3 @@ export function startMeasurement(win, config = measurementConfig) {
   };
   return state;
 }
-
-if (typeof window !== "undefined") startMeasurement(window);

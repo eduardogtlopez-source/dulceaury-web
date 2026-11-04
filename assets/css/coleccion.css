@@ -26,3 +26,6 @@
 @media(max-width:900px){.coleccion-grid{gap:20px}.coleccion-grid>.coleccion-card{width:calc((100% - 20px)/2)}.tito-momentos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.coleccion-grid{gap:18px 12px}.coleccion-grid>.coleccion-card{width:calc((100% - 12px)/2)}.coleccion-card figcaption{padding:13px 11px 16px}.coleccion-card h3{font-size:18px;margin-bottom:6px}.coleccion-card figcaption p{font-size:13px}.coleccion-nota{font-size:12px;margin-top:20px}.tito-momentos{gap:12px}.tito-momento .cap{font-size:13px;padding:.8rem .6rem}.tito-album{margin-top:25px}}
 @media(max-width:359px){.coleccion-grid{gap:22px}.coleccion-grid>.coleccion-card{width:100%}.coleccion-card figcaption{padding:16px}.coleccion-card h3{font-size:22px}.coleccion-card figcaption p{font-size:14px}}
+
+/* Mantener visible el inicio al entrar desde la cabecera. */
+#sobre{scroll-margin-top:90px}
